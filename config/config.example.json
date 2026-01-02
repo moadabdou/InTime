@@ -1,0 +1,55 @@
+{
+  "_comment": "InTime Widget - Complete Configuration",
+  "_docs": "See README.md for detailed information about each option",
+
+  "_color_options": "Clock text color - use any hex color",
+  "_available_colors": {
+    "White": "#FFFFFF",
+    "Red": "#FF0000",
+    "Green": "#00FF00",
+    "Blue": "#0000FF",
+    "Cyan": "#00FFFF",
+    "Magenta": "#FF00FF",
+    "Yellow": "#FFFF00",
+    "Orange": "#FF8000",
+    "Purple": "#8000FF",
+    "Pink": "#FF0080",
+    "Lime": "#80FF00",
+    "Teal": "#00FF80",
+    "Sky Blue": "#0080FF",
+    "Gold": "#FFD700",
+    "Silver": "#C0C0C0"
+  },
+  "color": "#FFFFFF",
+
+  "_style_options": "Visual rendering style",
+  "_available_styles": ["normal", "bordered", "lightbulb"],
+  "style": "normal",
+
+  "_display_options": "Font size and opacity",
+  "font_size": 78,
+  "opacity": 0.5,
+
+  "_position_options": "Position on screen - 'preset' or 'custom'",
+  "position_mode": "preset",
+  "position_preset": "center",
+  "_position_presets": [
+    "top",
+    "center",
+    "bottom"
+  ],
+
+  "_custom_position": "Only used when position_mode is 'custom'",
+  "position_x": 0,
+  "position_y": 0,
+
+  "_screen_sampling": "Real-time adaptive color based on screen content",
+  "screen_sampling": {
+    "enabled": false,
+    "update_interval": 0.5,
+    "throttle_threshold": 15
+  },
+
+  "_background_color": "Background color for contrast calculation",
+  "background_color": "#000000"
+}
