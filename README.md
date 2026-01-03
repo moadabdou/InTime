@@ -1,239 +1,408 @@
-# InTime Widget
+<div align="center">
 
-A production-ready, transparent time display overlay for Hyprland with multiple display modes and stunning visual effects.
+# ⏱️ InTime Widget
 
-## Features
+### *Your time is running out. Make every second count.*
 
-### Display Modes
-- **Clock Mode**: Standard digital clock (HH:MM:SS)
-- **Countdown Mode**: Timer with custom duration (e.g., 30m, 1h30m)
-- **Midnight Mode**: Countdown to end of day (23:59:59)
-- **Deadline Mode**: Horror-style countdown with progressive urgency effects
+<p>
+A Hyprland countdown widget inspired by the film <i>"In Time"</i> (2011)<br>
+where time is currency and every second matters.
+</p>
 
-### Visual Styles
-- **Normal**: Clean, bold monospace text
-- **Lightbulb**: 3 Body Problem-inspired particle glow effect
-- **Bordered**: Text with dark outline for better visibility
+![License: MIT](https://img.shields.io/badge/License-MIT-00FF00.svg)
+![Platform: Linux](https://img.shields.io/badge/Platform-Linux-blue)
+![Hyprland](https://img.shields.io/badge/Hyprland-Wayland-blueviolet)
+![Python 3.10+](https://img.shields.io/badge/Python-3.10+-yellow)
+![GTK4](https://img.shields.io/badge/GTK-4.0-orange)
 
-### Advanced Features
-- **Forbidden Alarm**: Intense visual alarm with waves, shake, and pulsing effects
-- **Multi-Monitor Support**: Display on one or all monitors simultaneously
-- **Screen Color Sampling**: Real-time adaptive color based on screen content
-- **Click-Through Overlay**: Never interferes with your workflow
-- **IPC Control**: 6 commands for dynamic control via Unix socket
+![Time Is Money](https://img.shields.io/badge/Time%20Is-Money-00FF00?style=for-the-badge)
+![Every Second Counts](https://img.shields.io/badge/Every%20Second-Counts-FF0000?style=for-the-badge)
 
-## Installation
+</div>
 
-### Dependencies
+---
+
+## 🎬 The Concept
+
+In the dystopian film *"In Time"* (2011), people stop aging at 25, but a glowing green countdown appears on their arm. When it hits zero, they die. Time becomes the ultimate currency - literally buying and selling years, hours, minutes.
+
+**InTime Widget** brings this visceral time-awareness to your desktop. Unlike boring system clocks, InTime makes you *feel* time passing, creating a constant reminder that every second counts.
+
+Perfect for:
+- 🎯 **Deadline Warriors** - Visual countdown with progressive urgency effects
+- 🧘 **Focus Sessions** - Pomodoro-style time tracking with purpose
+- ⚡ **Time Hackers** - Constant awareness that time is your most valuable resource
+- 🎨 **Aesthetic Lovers** - Beautiful green glow effects inspired by the film
+
+---
+
+## ✨ Features
+
+### 🕐 Four Display Modes
+
+<table>
+<tr>
+<td width="25%">
+
+**⏰ Clock Mode**
+
+Standard time display with seconds precision
+
 ```bash
-# GTK4 and Layer Shell
-sudo pacman -S gtk4 gtk4-layer-shell
-
-# Python dependencies
-sudo pacman -S python python-gobject python-cairo
+20:45:33
 ```
 
-### Setup
+</td>
+<td width="25%">
+
+**⏳ Countdown Mode**
+
+Race against time with custom duration
+
 ```bash
-cd /home/mathis/wtdo/intime_widget
-# The widget is ready to run from src/intime_widget.py
+00:29:47
 ```
 
-## Usage
+</td>
+<td width="25%">
 
-### Basic Examples
+**🌙 Midnight Mode**
+
+Countdown to tomorrow
+
 ```bash
-# Show current time
-./src/intime_widget.py
-
-# 30-minute countdown
-./src/intime_widget.py --mode countdown --duration 30m
-
-# Countdown to midnight with sci-fi glow
-./src/intime_widget.py --mode midnight --style lightbulb
-
-# Horror-style deadline (1 hour)
-./src/intime_widget.py --mode deadline --duration 1h
-
-# Display on all monitors
-./src/intime_widget.py --all-monitors
-
-# Custom color and opacity
-./src/intime_widget.py --color "#FF0000" --opacity 0.7
+03:14:27
 ```
+
+</td>
+<td width="25%">
+
+**💀 Deadline Mode**
+
+Horror-style countdown with urgency effects
+
+```bash
+00:05:43
+```
+*Gets more intense as time runs out*
+
+</td>
+</tr>
+</table>
+
+### 🎨 Visual Styles
+
+- **Normal** - Clean, bold monospace (like the movie's bio-clocks)
+- **Lightbulb** - 3 Body Problem-inspired particle glow effect (15 layers)
+- **Bordered** - Dark outline for maximum visibility
+
+### 🔥 Unique Features
+
+- **🚨 Forbidden Alarm** - Intense visual alarm (12-layer glow + waves + screen shake)
+- **🎨 Dynamic Colors** - Real-time adaptive color based on screen content
+- **🖥️ Multi-Monitor** - Display on one or all monitors simultaneously
+- **👻 Click-Through** - Transparent overlay that never interferes
+- **🔌 IPC Control** - 6 commands for remote control via Unix socket
+- **⚡ Optimized** - Efficient rendering (3-20fps depending on mode)
+
+---
+
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="screenshots/260102_20h19m30s_screenshot.png" alt="InTime Widget on Desktop">
+      <p align="center"><b>Clean Desktop Integration</b><br>Transparent overlay, always visible, never intrusive</p>
+    </td>
+    <td width="50%">
+      <img src="screenshots/260102_20h04m48s_screenshot.png" alt="Movie Theme">
+      <p align="center"><b>Inspired by the Film</b><br>"Time is Money" - the ultimate currency</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="screenshots/260102_20h03m33s_screenshot.png" alt="Life is Paid Out">
+      <p align="center"><b>Every Second Counts</b><br>Real-time countdown with green glow aesthetic</p>
+    </td>
+    <td width="50%">
+      <img src="screenshots/260102_20h05m07s_screenshot.png" alt="Deadline Mode">
+      <p align="center"><b>High-Pressure Deadlines</b><br>Progressive urgency effects as time runs out</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/mathis0/InTime.git
+cd InTime
+
+# Install dependencies (Arch Linux)
+sudo pacman -S gtk4 gtk4-layer-shell python python-gobject python-cairo
+
+# Run interactive installer
+./scripts/install.sh
+```
+
+**That's it!** The installer will guide you through configuration.
+
+### Basic Usage
+
+```bash
+# Show current time with dynamic colors
+intime-widget start
+
+# 30-minute Pomodoro timer with sci-fi glow
+intime-widget start --mode countdown --duration 30m --style lightbulb
+
+# 1-hour deadline with horror effects (gets intense!)
+intime-widget start --mode deadline --duration 1h
+
+# Countdown to midnight on all monitors
+intime-widget start --mode midnight --all-monitors
+
+# Stop the widget
+intime-widget stop
+```
+
+---
+
+## 💡 The "In Time" Experience
+
+### Why Time Awareness Matters
+
+> *"For a few to be immortal, many must die."* - In Time (2011)
+
+While we don't have countdown clocks on our arms (yet), InTime Widget serves a deeper purpose:
+
+1. **Mortality Awareness** - Memento mori for the digital age
+2. **Productivity Boost** - Deadlines create urgency and focus
+3. **Time as Currency** - Every hour you spend is an hour you can't get back
+4. **Visual Accountability** - Can't ignore time when it's always visible
+
+Unlike the dystopian film where time inequality creates class warfare, InTime Widget democratizes time awareness - everyone gets the same countdown.
+
+---
+
+## 📖 Usage Guide
 
 ### Command-Line Options
+
+```bash
+./src/intime_widget.py [OPTIONS]
+
+Display Modes:
+  --mode clock          Standard time display (default)
+  --mode countdown      Timer with custom duration
+  --mode midnight       Countdown to end of day
+  --mode deadline       Horror-style countdown with urgency
+
+Countdown Options:
+  --duration DURATION   e.g., 30m, 1h30m, 2h15m30s
+
+Visual Options:
+  --style normal        Clean bold text (default)
+  --style lightbulb     Particle glow effect
+  --color "#RRGGBB"     Fixed color (disables dynamic colors)
+  --opacity 0.0-1.0     Transparency level
+  --font-size SIZE      Text size in pixels
+
+Position Options:
+  --position top        Top of screen
+  --position center     Center (default)
+  --position bottom     Bottom of screen
+  --position-x X --position-y Y   Custom coordinates
+
+Monitor Options:
+  --monitor INDEX       Specific monitor (0=primary, 1=secondary)
+  --all-monitors        Display on all monitors
 ```
---mode {clock,countdown,midnight,deadline}
-    Display mode (default: clock)
 
---duration DURATION
-    Duration for countdown/deadline modes (e.g., 30m, 1h30m, 45s)
+### Examples
 
---color COLOR
-    Text color in hex format (e.g., #FF0000)
+```bash
+# Pomodoro timer (25 min work session)
+intime-widget start --mode countdown --duration 25m --style lightbulb
 
---font-size SIZE
-    Font size in pixels (default: from config.json)
+# Urgent deadline at top of screen
+intime-widget start --mode deadline --duration 2h --position top --color "#FF0000"
 
---opacity OPACITY
-    Text opacity 0.0-1.0 (default: from config.json)
+# Always-on clock at bottom with dynamic colors
+intime-widget start --position bottom
 
---style {normal,lightbulb}
-    Visual style (default: normal)
-
---monitor INDEX
-    Monitor index (0=primary, 1=secondary, etc.)
-
---all-monitors
-    Display on all connected monitors
+# Meeting countdown on secondary monitor
+intime-widget start --mode countdown --duration 1h --monitor 1
 ```
 
-## Configuration
+### Control Commands (IPC)
 
-Edit `config.json` to customize default settings:
+```bash
+# Reload configuration
+echo "reload_config" | nc -U /tmp/intime_widget.sock
+
+# Get widget status
+echo "status" | nc -U /tmp/intime_widget.sock
+
+# Trigger forbidden alarm (urgent notification)
+echo "forbidden_alarm:Emergency|Critical Task|Time is up!" | nc -U /tmp/intime_widget.sock
+
+# Dismiss alarm
+echo "dismiss_alarm" | nc -U /tmp/intime_widget.sock
+
+# Reset from deadline mode to clock
+echo "reset_deadline" | nc -U /tmp/intime_widget.sock
+
+# Toggle screen color sampling on/off
+echo "toggle_screen_sampling" | nc -U /tmp/intime_widget.sock
+```
+
+See [IPC_COMMANDS.md](IPC_COMMANDS.md) for complete documentation.
+
+---
+
+## ⚙️ Configuration
+
+Edit `~/.config/intime/config.json` to customize defaults:
 
 ```json
 {
-  "color": "#FFFFFF",
+  "color": "#00FF00",
   "font_size": 78,
   "style": "normal",
   "opacity": 0.5,
   "position_mode": "preset",
   "position_preset": "center",
   "screen_sampling": {
-    "enabled": false
-  }
+    "enabled": true,
+    "update_interval": 0.5,
+    "throttle_threshold": 15
+  },
+  "background_color": "#000000"
 }
 ```
 
-### Position Presets
-- `center`: Full-screen centered
-- `top-left`: Upper left corner
-- `top-right`: Upper right corner
-- `bottom-left`: Lower left corner
-- `bottom-right`: Lower right corner
+**Position presets:** `top`, `center`, `bottom`
+**Styles:** `normal`, `lightbulb`
 
-## IPC Commands
+All settings can be overridden via command-line arguments.
 
-Control the widget via Unix socket at `/tmp/intime_widget.sock`:
+---
 
-```bash
-# Reload configuration
-echo "reload_config" | nc -U /tmp/intime_widget.sock
+## 🏗️ Architecture
 
-# Get status
-echo "status" | nc -U /tmp/intime_widget.sock
+### Production-Ready Code
 
-# Trigger alarm
-echo "forbidden_alarm:class|title|Custom Message" | nc -U /tmp/intime_widget.sock
-
-# Dismiss alarm
-echo "dismiss_alarm" | nc -U /tmp/intime_widget.sock
-
-# Reset from deadline mode
-echo "reset_deadline" | nc -U /tmp/intime_widget.sock
-
-# Toggle screen color sampling
-echo "toggle_screen_sampling" | nc -U /tmp/intime_widget.sock
-```
-
-See `IPC_COMMANDS.md` for complete documentation.
-
-## Architecture
-
-### File Structure
-```
-intime_widget/
-├── src/
-│   ├── intime_widget.py          # Main widget (1292 lines)
-│   └── screen_color_monitor.py   # Screen sampling module
-├── config.json                    # Configuration file
-├── README.md                      # This file
-└── IPC_COMMANDS.md               # IPC reference
-```
+- **1,338 lines** of polished Python
+- **GTK4 + Layer Shell** for proper Wayland overlays
+- **Cairo rendering** for pixel-perfect graphics
+- **IPC server** for remote control
+- **Multi-monitor** support via monitor detection
+- **Adaptive colors** with screen sampling
 
 ### Key Components
 
-**IPCServer Class** (Lines 38-131)
-- Unix socket server for remote control
-- 6 registered commands
-- Shared across all widget instances
-
-**InTimeWidget Class** (Lines 227-1192)
-- Main widget implementation
-- Complete rendering pipeline
-- Animation system (3 separate timers)
-- Multi-monitor support
-- Screen color sampling integration
-
-**InTimeApplication Class** (Lines 1194-1251)
-- GTK Application wrapper
-- Multi-monitor widget creation
-- Application lifecycle management
+| Component | Lines | Purpose |
+|-----------|-------|---------|
+| `IPCServer` | 38-131 | Unix socket for remote control |
+| `InTimeWidget` | 227-1192 | Main widget, rendering, animations |
+| `ScreenColorMonitor` | (separate file) | Real-time screen sampling |
+| `InTimeApplication` | 1194-1251 | GTK app wrapper, multi-monitor |
 
 ### Rendering Pipeline
 
-1. **on_draw()** (Lines 497-609)
-   - Mode-based time calculation
-   - Color parsing and flash effects
-   - Style routing to specialized renderers
+1. **Mode calculation** - Determine current time/countdown value
+2. **Color processing** - Parse config/CLI color, apply dynamic sampling
+3. **Style routing** - Normal/Lightbulb/Bordered/Deadline renderers
+4. **Animation system** - 1Hz clock, 20Hz lightbulb, 3Hz deadline, 10Hz alarm
 
-2. **Specialized Renderers**
-   - `_draw_lightbulb_text()`: Particle-based glow (15 layers + 4 core)
-   - `_draw_bordered_text()`: Simple outline effect
-   - `_draw_forbidden_alarm()`: 12-layer glow + waves + shake
-   - `_draw_deadline_countdown()`: Progressive urgency effects
+### Performance
 
-3. **Animation System**
-   - 1Hz: Main time updates (`update_time`)
-   - 20Hz: Lightbulb animation (`update_animation`)
-   - 3Hz: Deadline animation (`update_animation`)
-   - 10Hz: Alarm animation (`update_alarm_animation`)
+- **Optimized layer counts** - All visual effects tuned for efficiency
+- **Variable frame rates** - 1-20fps depending on visual complexity
+- **Low CPU usage** - Deadline mode uses only 3fps
+- **GPU acceleration** - Cairo uses hardware rendering when available
 
-## Performance Notes
+---
 
-- Optimized layer counts for all visual effects
-- Deadline mode uses 3fps animation (low CPU)
-- Lightbulb mode uses 20fps (smooth but efficient)
-- Alarm effects use 10fps (balanced intensity)
-- Screen sampling is disabled by default
+## 🎯 Why InTime Widget?
 
-## What Was Removed
+### The Problem
 
-This is a clean time-display widget. All task-tracking features have been removed:
-- Task class and TaskManager
-- Database integration (db_config)
-- Window tracker
-- Idle tracker
-- Workspace monitor
-- Task input/list UI
-- Force mode
-- Task-related IPC commands
+Standard desktop clocks are boring. They show time, but they don't make you *feel* time passing. You glance, see "14:30", and move on. No urgency. No awareness. No connection to the ticking clock of your life.
 
-## Development
+### The Solution
 
-### Testing
-```bash
-# Syntax check
-python3 -m py_compile src/intime_widget.py
+InTime Widget transforms time display into an **experience**:
 
-# Run with debug output
-./src/intime_widget.py --mode clock 2>&1 | tee debug.log
-```
+- **Visceral countdown** - Watch seconds tick away in real-time
+- **Progressive urgency** - Deadline mode gets more intense as time runs out
+- **Always visible** - Transparent overlay you can't ignore
+- **Beautiful aesthetics** - Green glow inspired by the film's bio-clocks
 
-### Dependencies Required
-- Python 3.x
-- GTK 4.0
-- GTK4LayerShell 1.0
-- Cairo
-- Pango
-- screen_color_monitor.py (included)
+### The Philosophy
 
-## License
+> "Time is the most valuable thing a man can spend." - Theophrastus
 
-Part of the wtdo project.
+InTime Widget embodies **Memento Mori** (remember you must die) for the digital age. By making time visible and urgent, it encourages:
 
-## Credits
+- **Intentional living** - Awareness of how you spend each hour
+- **Productivity** - Deadlines create focus and eliminate procrastination
+- **Time appreciation** - Recognizing that every second is precious
 
-Created by transferring and refactoring code from clock_widget.py, removing all task-tracking features while preserving the complete time display and animation system.
+In the movie, the poor live day-by-day with minutes remaining. The rich have centuries. InTime Widget reminds us that *everyone* is on the clock - the only question is how you spend your time.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Quick Links
+
+- 🐛 [Report a Bug](https://github.com/mathis0/InTime/issues/new?labels=bug&template=bug_report.md)
+- ✨ [Request a Feature](https://github.com/mathis0/InTime/issues/new?labels=enhancement&template=feature_request.md)
+- 📖 [Documentation](https://github.com/mathis0/InTime/wiki)
+
+---
+
+## 📚 Additional Resources
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Fast setup guide
+- **[IPC_COMMANDS.md](IPC_COMMANDS.md)** - Complete IPC reference
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+
+---
+
+## 📜 License
+
+MIT License - See [LICENSE](LICENSE) for details
+
+---
+
+## 🎬 Credits
+
+**InTime Widget** is inspired by:
+- **"In Time" (2011 film)** - Directed by Andrew Niccol
+- **Hyprland community** - For the amazing Wayland compositor
+- **GTK4 Layer Shell** - For proper overlay support
+
+Created with the philosophy that **time is the ultimate currency** and every second should be spent intentionally.
+
+---
+
+<div align="center">
+
+### ⏱️ Don't waste your time. Track it.
+
+**[⭐ Star this repo](https://github.com/mathis0/InTime)** if you believe time matters.
+
+*Made with urgency for the time-conscious*
+
+</div>

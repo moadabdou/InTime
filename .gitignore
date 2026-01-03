@@ -40,6 +40,4 @@ config/config.json
 # Logs
 *.log
 
-# Screenshots (keep examples only)
-screenshots/*.png
-!screenshots/demo.png
+# Screenshots - included in repo for documentation
