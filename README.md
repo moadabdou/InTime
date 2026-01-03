@@ -26,16 +26,15 @@ where time is currency and every second matters.
 
 ## 🎥 Demo
 
-<!-- TODO: Add demo GIF here once created -->
-<!-- Create a 30-second GIF showing: -->
-<!-- - Widget startup and different modes (clock, countdown, deadline) -->
-<!-- - Dynamic color changes in action -->
-<!-- - Different position presets (top, center, bottom) -->
-<!-- - Visual effects (lightbulb glow, deadline urgency) -->
-<!-- Use: Peek, OBS, or SimpleScreenRecorder to capture -->
-<!-- Optimize to <10MB using online tools like ezgif.com -->
+<div align="center">
 
-> **Demo GIF coming soon!** In the meantime, check the [Screenshots](#-screenshots) section below.
+<video src="https://github.com/mathis0/InTime/assets/screenshots/demo.mp4" width="800" controls>
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="screenshots/demo.mp4">link to the video</a> instead.</p>
+</video>
+
+*InTime Widget in action - showcasing all display modes, visual effects, and position presets*
+
+</div>
 
 </div>
 
