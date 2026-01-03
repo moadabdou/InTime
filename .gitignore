@@ -47,3 +47,6 @@ LAUNCH_GUIDE.md
 CONTENT_TEMPLATES.md
 
 # Screenshots - included in repo for documentation
+# Exclude large unoptimized versions
+screenshots/demo.gif
+screenshots/demo_small.gif

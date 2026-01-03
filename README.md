@@ -28,9 +28,7 @@ where time is currency and every second matters.
 
 <div align="center">
 
-<video src="https://github.com/mathis0/InTime/assets/screenshots/demo.mp4" width="800" controls>
-  <p>Your browser doesn't support HTML5 video. Here is a <a href="screenshots/demo.mp4">link to the video</a> instead.</p>
-</video>
+![InTime Widget Demo](screenshots/demo_optimized.gif)
 
 *InTime Widget in action - showcasing all display modes, visual effects, and position presets*
 
