@@ -40,4 +40,10 @@ config/config.json
 # Logs
 *.log
 
+plan.md
+
+# Internal planning documents (not for public repo)
+LAUNCH_GUIDE.md
+CONTENT_TEMPLATES.md
+
 # Screenshots - included in repo for documentation

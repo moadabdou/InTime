@@ -9,6 +9,10 @@ A Hyprland countdown widget inspired by the film <i>"In Time"</i> (2011)<br>
 where time is currency and every second matters.
 </p>
 
+![GitHub stars](https://img.shields.io/github/stars/mathis0/InTime?style=flat&color=00FF00)
+![GitHub forks](https://img.shields.io/github/forks/mathis0/InTime?style=flat&color=00FF00)
+![GitHub issues](https://img.shields.io/github/issues/mathis0/InTime?style=flat&color=yellow)
+![GitHub last commit](https://img.shields.io/github/last-commit/mathis0/InTime?style=flat&color=blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-00FF00.svg)
 ![Platform: Linux](https://img.shields.io/badge/Platform-Linux-blue)
 ![Hyprland](https://img.shields.io/badge/Hyprland-Wayland-blueviolet)
@@ -17,6 +21,21 @@ where time is currency and every second matters.
 
 ![Time Is Money](https://img.shields.io/badge/Time%20Is-Money-00FF00?style=for-the-badge)
 ![Every Second Counts](https://img.shields.io/badge/Every%20Second-Counts-FF0000?style=for-the-badge)
+
+---
+
+## 🎥 Demo
+
+<!-- TODO: Add demo GIF here once created -->
+<!-- Create a 30-second GIF showing: -->
+<!-- - Widget startup and different modes (clock, countdown, deadline) -->
+<!-- - Dynamic color changes in action -->
+<!-- - Different position presets (top, center, bottom) -->
+<!-- - Visual effects (lightbulb glow, deadline urgency) -->
+<!-- Use: Peek, OBS, or SimpleScreenRecorder to capture -->
+<!-- Optimize to <10MB using online tools like ezgif.com -->
+
+> **Demo GIF coming soon!** In the meantime, check the [Screenshots](#-screenshots) section below.
 
 </div>
 
@@ -356,6 +375,120 @@ InTime Widget embodies **Memento Mori** (remember you must die) for the digital 
 - **Time appreciation** - Recognizing that every second is precious
 
 In the movie, the poor live day-by-day with minutes remaining. The rich have centuries. InTime Widget reminds us that *everyone* is on the clock - the only question is how you spend your time.
+
+---
+
+## ❓ FAQ
+
+<details>
+<summary><b>How do I record a demo GIF of the widget?</b></summary>
+
+Use **Peek** (recommended for Linux):
+```bash
+sudo pacman -S peek  # Arch Linux
+peek
+```
+Click the Peek window, position it over your widget, and click Record. Optimize the GIF with [ezgif.com](https://ezgif.com/optimize) to reduce file size.
+
+</details>
+
+<details>
+<summary><b>Why is the widget not showing up?</b></summary>
+
+1. Ensure you're running Hyprland (not X11)
+2. Check if GTK4 layer shell is installed: `pacman -Q gtk4-layer-shell`
+3. Try running with verbose output: `intime-widget start --help`
+4. Check if another instance is running: `intime-widget status`
+
+</details>
+
+<details>
+<summary><b>Can I use this with Waybar or Eww?</b></summary>
+
+InTime Widget is a **standalone overlay widget**, not a Waybar/Eww module. It runs independently and displays on top of everything. However, you can:
+- Use IPC commands to control it from Waybar buttons
+- Position it to avoid overlapping with your bar
+- Use the same color scheme for visual consistency
+
+</details>
+
+<details>
+<summary><b>How do I make the widget auto-start with Hyprland?</b></summary>
+
+Add to your `~/.config/hypr/hyprland.conf`:
+```conf
+exec-once = intime-widget start --mode clock --position bottom
+```
+
+Or for a Pomodoro timer that restarts daily:
+```conf
+exec-once = intime-widget start --mode countdown --duration 25m --style lightbulb
+```
+
+</details>
+
+<details>
+<summary><b>What's the difference between "countdown" and "deadline" modes?</b></summary>
+
+- **Countdown**: Clean timer that decreases in HH:MM:SS format. Great for Pomodoro sessions.
+- **Deadline**: Horror-style countdown with progressive urgency effects (pulsing, color shifts, intensity increases as time runs out). Use when you need extra motivation!
+
+</details>
+
+<details>
+<summary><b>Does dynamic color mode work on Wayland?</b></summary>
+
+Yes! It uses `grim` (Wayland screenshot tool) to sample your screen colors every 0.5 seconds. Install with:
+```bash
+sudo pacman -S grim
+```
+
+If you prefer fixed colors, use `--color "#00FF00"` which automatically disables dynamic sampling.
+
+</details>
+
+<details>
+<summary><b>How much CPU/RAM does it use?</b></summary>
+
+Very minimal:
+- **RAM**: ~30-50 MB
+- **CPU**: <1% idle, 2-3% during animations
+- **Frame rates**: 1fps (clock), 3fps (deadline), 20fps (lightbulb)
+
+The widget is optimized for efficiency - even intensive visual effects use low frame rates.
+
+</details>
+
+<details>
+<summary><b>Can I customize the colors/fonts/size?</b></summary>
+
+Yes! Via command-line arguments:
+```bash
+intime-widget start --color "#FF00FF" --font-size 120 --opacity 0.8
+```
+
+Or edit `~/.config/intime/config.json` for persistent defaults.
+
+</details>
+
+<details>
+<summary><b>Does this work on non-Hyprland Wayland compositors?</b></summary>
+
+It should work on any compositor that supports `gtk4-layer-shell` (Sway, River, etc.), but it's **only tested on Hyprland**. Try it and report back!
+
+</details>
+
+<details>
+<summary><b>How do I contribute color themes or presets?</b></summary>
+
+1. Fork the repo
+2. Add your theme to `config/themes/` directory
+3. Include a screenshot
+4. Submit a PR with description
+
+Popular themes (Matrix green, Nord, Dracula, Catppuccin) are especially welcome!
+
+</details>
 
 ---
 
