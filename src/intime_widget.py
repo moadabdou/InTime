@@ -221,7 +221,6 @@ Examples:
 
     parser.add_argument('--style',
                         choices=['normal', 'lightbulb'],
-                        default='normal',
                         help='Visual style: normal (default) or lightbulb (particle-based light trails inspired by 3 Body Problem)')
 
     args = parser.parse_args()
